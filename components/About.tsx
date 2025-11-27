@@ -9,7 +9,7 @@ export default function About() {
       organization: "NTB - Ministerio de Salud",
       description:
         "Mi carrera comenzó en la trinchera, dando soporte en horario nocturno de procesos críticos, con el tiempo llegué a implementar modulos de SiSalud en 3 hospitales provinciales. Aquí aprendí que el software no es solo código; es la base sobre la que operan servicios vitales. Desarrollé pipelines ETL para procesar datos sensibles, entendiendo la importancia de la integridad y seguridad.",
-      skills: ["Infraestructura Crítica", "ETL", "Soporte 24/7"],
+      skills: ["Infraestructura Crítica", "ETL", "Helpdesk"],
       icon: <Server className="w-6 h-6" />,
     },
     {
@@ -239,7 +239,7 @@ export default function About() {
                   className="absolute left-4 md:left-1/2 w-4 h-4 
                 bg-background border-2 border-slate-600 dark:border-primary rounded-full 
                 transform -translate-x-1/2 mt-1.5 z-10 
-                shadow-[0_0_10px_rgba(192,255,107,0.5)] dark:shadow-[0_0_10px_rgba(192,255,107,0.5)]"
+                shadow-[0_0_10px_rgba(108,108,108,0.5)] dark:shadow-[0_0_10px_rgba(192,255,107,0.5)]"
                 >
                   <div className="absolute inset-0 bg-slate-600/20 dark:bg-primary/20 rounded-full animate-pulse-glow" />
                 </div>
