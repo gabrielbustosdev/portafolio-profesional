@@ -1,13 +1,4 @@
-import {
-  Code2,
-  Database,
-  Globe,
-  Server,
-  Terminal,
-  Cpu,
-  GitBranch,
-  Layers,
-} from "lucide-react";
+import { Code2, Database, Globe, Server, Terminal, Cpu } from "lucide-react";
 import Image from "next/image";
 
 export default function About() {
@@ -15,9 +6,9 @@ export default function About() {
     {
       year: "2020 - 2023",
       title: "Soporte Crítico",
-      organization: "Ministerio de Salud",
+      organization: "NTB - Ministerio de Salud",
       description:
-        "Mi carrera comenzó en la trinchera. Gestioné la infraestructura crítica de 3 centros médicos, asegurando disponibilidad 24/7. Aquí aprendí que el software no es solo código; es la base sobre la que operan servicios vitales. Desarrollé pipelines ETL para procesar datos sensibles, entendiendo la importancia de la integridad y seguridad.",
+        "Mi carrera comenzó en la trinchera, dando soporte en horario nocturno de procesos críticos, con el tiempo llegué a implementar modulos de SiSalud en 3 hospitales provinciales. Aquí aprendí que el software no es solo código; es la base sobre la que operan servicios vitales. Desarrollé pipelines ETL para procesar datos sensibles, entendiendo la importancia de la integridad y seguridad.",
       skills: ["Infraestructura Crítica", "ETL", "Soporte 24/7"],
       icon: <Server className="w-6 h-6" />,
     },
@@ -26,14 +17,14 @@ export default function About() {
       title: "Evolución a Datos",
       organization: "Ualabee",
       description:
-        "Di el salto a producto. Automaticé validaciones de calidad para datos de transporte público masivo. Creé sistemas de monitoreo proactivo que detectaban anomalías antes de que afectaran a los usuarios. Trabajé codo a codo con equipos de ingeniería en un producto utilizado por cientos de personas diariamente.",
-      skills: ["Automatización", "Monitoreo", "Calidad de Datos"],
+        "Di el salto a producto. Participé en el desarrollo de un sistema para automatizar la validación y corrección de datos bajo el estandar GTFS con bases de datos geoespaciales (PostgreSQL con PostGIS) garantizando la calidad de datos del transporte público. Trabajé codo a codo con equipos de ingeniería en un producto utilizado por cientos de personas diariamente.",
+      skills: ["Automatización", "Calidad de Datos", "PostGIS"],
       icon: <Database className="w-6 h-6" />,
     },
     {
       year: "2024 - Presente",
       title: "Desarrollo FullStack",
-      organization: "Autónomo & FaMAF",
+      organization: "Autónomo",
       description:
         "Hoy combino la teoría con la práctica. Mientras profundizo en Ciencias de la Computación en FaMAF (UNC), construyo aplicaciones web modernas con React, Node.js y Python. Estoy explorando activamente cómo aplicar IA y Machine Learning para resolver problemas reales de negocio, no solo como demos técnicas.",
       skills: ["React", "Node.js", "Python", "IA/ML"],
@@ -96,7 +87,15 @@ export default function About() {
     },
     {
       name: "Python",
-      icon: <Terminal className="w-5 h-5" />, // No SVG found, keeping Lucide
+      icon: (
+        <Image
+          src="/tech/python.svg"
+          alt="Python"
+          width={20}
+          height={20}
+          className="w-5 h-5"
+        />
+      ),
       category: "Backend",
     },
     {
@@ -178,8 +177,16 @@ export default function About() {
       category: "Frontend",
     },
     {
-      name: "REST APIs",
-      icon: <Globe className="w-5 h-5" />, // Generic, keeping Lucide
+      name: "GCP",
+      icon: (
+        <Image
+          src="/tech/google-cloud-1.svg"
+          alt="Google Cloud Plataform"
+          width={20}
+          height={20}
+          className="w-5 h-5"
+        />
+      ),
       category: "Backend",
     },
   ];
@@ -194,7 +201,11 @@ export default function About() {
         <div className="mb-24 text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
             Más que código, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+            <span
+              className="text-transparent bg-clip-text 
+            bg-gradient-to-r from-lime-800 via-lime-600 to-lime-800 
+            dark:bg-gradient-to-r dark:from-lime-800 dark:via-primary dark:to-lime-800"
+            >
               construyo soluciones resilientes.
             </span>
           </h2>
@@ -208,7 +219,12 @@ export default function About() {
 
         {/* Timeline Section */}
         <div className="mb-32 relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 via-blue-500/30 to-transparent transform md:-translate-x-1/2" />
+          <div
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 
+          bg-gradient-to-b from-slate-800/50 via-slate-600/30 to-transparent 
+          dark:bg-gradient-to-b dark:from-primary/50 dark:via-lime-600/30 dark:to-transparent 
+          transform md:-translate-x-1/2"
+          />
 
           <div className="space-y-12">
             {journeySteps.map((step, index) => (
@@ -219,8 +235,13 @@ export default function About() {
                 }`}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-background border-2 border-primary rounded-full transform -translate-x-1/2 mt-1.5 z-10 shadow-[0_0_10px_rgba(192,255,107,0.5)]">
-                  <div className="absolute inset-0 bg-primary/20 rounded-full animate-pulse-glow" />
+                <div
+                  className="absolute left-4 md:left-1/2 w-4 h-4 
+                bg-background border-2 border-slate-600 dark:border-primary rounded-full 
+                transform -translate-x-1/2 mt-1.5 z-10 
+                shadow-[0_0_10px_rgba(192,255,107,0.5)] dark:shadow-[0_0_10px_rgba(192,255,107,0.5)]"
+                >
+                  <div className="absolute inset-0 bg-slate-600/20 dark:bg-primary/20 rounded-full animate-pulse-glow" />
                 </div>
 
                 {/* Content Spacer for Desktop */}
@@ -244,7 +265,7 @@ export default function About() {
                     </div>
 
                     <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
                       {step.organization}
                     </h4>
 
@@ -272,22 +293,37 @@ export default function About() {
         {/* Tech Stack Section */}
         <div className="text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-12 flex items-center justify-center gap-3">
-            <Cpu className="text-primary" />
+            <Cpu className="text-slate-600 dark:text-primary" />
             Tecnologías mas usadas
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-w-2xl mx-auto">
             {techStack.map((tech, index) => (
-              <div
-                key={index}
-                className="group p-4 bg-card/30 border border-border/50 rounded-xl hover:bg-card hover:border-primary/30 transition-all duration-300 flex flex-col items-center gap-3"
-              >
-                <div className="text-muted-foreground group-hover:text-primary transition-colors duration-300 grayscale group-hover:grayscale-0">
-                  {tech.icon}
+              <div key={index} className="flex justify-center py-4">
+                <div className="dark relative w-24 h-28 filter drop-shadow-[0_4px_6px_rgba(0,0,0,0.5)]">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-slate-600 to-slate-800"
+                    style={{
+                      clipPath:
+                        "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                    }}
+                  />
+                  <div
+                    className="absolute inset-[3px] bg-slate-800 flex flex-col items-center justify-center gap-2"
+                    style={{
+                      clipPath:
+                        "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent pointer-events-none" />
+                    <div className="scale-125 drop-shadow-md z-10 text-slate-200">
+                      {tech.icon}
+                    </div>
+                    <span className="font-bold text-[10px] text-slate-200 uppercase tracking-wider text-center leading-none z-10 px-1">
+                      {tech.name}
+                    </span>
+                  </div>
                 </div>
-                <span className="font-medium text-sm text-gray-300 group-hover:text-white transition-colors">
-                  {tech.name}
-                </span>
               </div>
             ))}
           </div>

@@ -3,10 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -15,7 +15,7 @@ export default function Navbar() {
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
 
   if (!mounted) {
@@ -23,16 +23,15 @@ export default function Navbar() {
   }
 
   const navLinks = [
-    { href: "#", label: "Inicio" },
-    { href: "#projects", label: "Proyectos" },
-    { href: "#skills", label: "Habilidades" },
-    { href: "#contact", label: "Contacto" },
+    { href: "/", label: "Inicio" },
+    { href: "/projects", label: "Proyectos" },
+    { href: "/contact", label: "Contacto" },
   ];
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-        <div className="flex items-center">
+        <div className="hidden md:flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <span className="font-bold text-xl tracking-tight text-primary">
               {"<"}
@@ -55,21 +54,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Theme Toggle (Desktop) */}
-        <div className="hidden md:flex items-center">
-          <button
-            onClick={toggleTheme}
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground h-9 w-9"
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
-        </div>
-
         {/* Mobile Menu Button */}
         <div className="flex md:hidden">
           <button
@@ -81,6 +65,36 @@ export default function Navbar() {
             ) : (
               <Menu className="h-6 w-6" />
             )}
+          </button>
+        </div>
+
+        {/* Theme Toggle (Desktop) */}
+        <div className="flex items-center">
+          <button
+            onClick={toggleTheme}
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 group/toggle extend-touch-target size-8"
+            title="Toggle theme"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4.5"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+              <path d="M12 3l0 18"></path>
+              <path d="M12 9l4.65 -4.65"></path>
+              <path d="M12 14.3l7.37 -7.37"></path>
+              <path d="M12 19.6l8.85 -8.85"></path>
+            </svg>
+            <span className="sr-only">Toggle theme</span>
           </button>
         </div>
       </div>
@@ -99,24 +113,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 px-3">
-              <button
-                onClick={toggleTheme}
-                className="flex items-center space-x-2 text-sm font-medium w-full"
-              >
-                {theme === "dark" ? (
-                  <>
-                    <Sun className="h-4 w-4" />
-                    <span>Modo Claro</span>
-                  </>
-                ) : (
-                  <>
-                    <Moon className="h-4 w-4" />
-                    <span>Modo Oscuro</span>
-                  </>
-                )}
-              </button>
-            </div>
           </div>
         </div>
       )}
