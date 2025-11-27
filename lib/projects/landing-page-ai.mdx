@@ -1,0 +1,73 @@
+---
+title: "Landing Page con Agente Inteligente"
+description: "Landing profesional Full Stack con chatbot inteligente, formularios integrados y flujo automático de captación."
+date: "2025-11-21"
+image:
+  src: "/assets/web-corporativa-ia.png"
+  alt: "Landing Page con Chatbot IA"
+tags: ["FullStack", "Chatbot", "IA"]
+techStack:
+  [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind",
+    "Vercel",
+    "OpenRouter",
+    "Gmail API",
+  ]
+liveDemo: "https://gabrielbustosdev.vercel.app/"
+role: "Full Stack Developer"
+status: "completed"
+metrics:
+  performanceScore: 98
+  uptime: "99.9%"
+---
+
+## Descripción General
+
+Landing diseñada para convertir, con un agente inteligente integrado al flujo de interacción. El chatbot guía al usuario, captura contexto, genera resúmenes profesionales y los envía junto a las consultas a través de correo automatizado. Arquitectura pensada para integrarse en funnels comerciales y soporte inicial automatizado.
+
+## Características Principales
+
+- Chatbot con IA integrado al layout, persistente durante toda la sesión.
+- Resumen automático del diálogo generado vía modelo LLM dedicado.
+- Formularios validados y sincronizados con el contexto del chat.
+- Modal contextual con el historial y el resumen profesional.
+- Despliegue optimizado en Vercel.
+
+## Integraciones
+
+### OpenRouter (Chat + Resúmenes)
+
+Doble canal:
+
+- Key 1: interacción conversacional.
+- Key 2: generación de resumen profesional y estructurado.
+
+Aísla carga, evita bloqueos y mantiene latencia estable.
+
+### Gmail API (Contacto + Pipeline)
+
+El backend procesa datos, valida payloads y dispara emails vía OAuth2. Incluye el resumen generado por IA y el historial necesario para seguimiento comercial.
+
+## Desafíos
+
+- Mantener persistencia de estado sin fricción en la UX.
+- Implementar detección de intención para mostrar acciones guiadas.
+- Orquestar múltiples APIs sin degradar tiempos de respuesta.
+- Balancear claves de OpenRouter para evitar rate limits.
+- Diseñar UI limpia con componentes complejos (modales, formularios, chat).
+
+## Aprendizajes
+
+- Context API como base de persistencia conversacional.
+- Enrutamiento de IA con balanceo por modelo y tipo de tarea.
+- Pattern de intención para flujos guiados.
+- Pipeline de correo con Gmail OAuth2 integrado a endpoints de Next.js.
+- Validación con Zod para reducir edge cases en formularios.
+- Arquitectura unificada Front/Backend con API Routes.
+
+## Enlace
+
+[Ver Proyecto](https://gabrielbustosdev.vercel.app/)
