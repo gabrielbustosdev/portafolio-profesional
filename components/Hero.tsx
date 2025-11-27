@@ -3,8 +3,9 @@ import Link from "next/link";
 
 export default function Home() {
   const techStack = [
-    "JavaScript/TypeScript",
+    "TypeScript",
     "React",
+    "Next.js",
     "Node.js",
     "Python",
     "Integración de IA",
@@ -14,7 +15,6 @@ export default function Home() {
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6 py-20 overflow-hidden">
       <HexagonBackground />
-
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8 animate-fade-in-up">
           <div className="space-y-4">
@@ -23,7 +23,6 @@ export default function Home() {
                 Desarrollador FullStack | Explorando IA
               </p>
             </div>
-
             <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight">
               Construyo aplicaciones web <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C0FF6B] to-[#8aff6b]">
@@ -31,50 +30,19 @@ export default function Home() {
               </span>
               <span className="text-primary">.</span>
             </h1>
-
             <h2 className="text-xl md:text-2xl text-gray-400 font-light max-w-lg">
               Transformo problemas técnicos complejos en soluciones elegantes y
               escalables.
             </h2>
           </div>
-
           <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
             Mi background en análisis de datos y administración de sistemas me
             da una ventaja: entiendo el panorama completo, desde la
             infraestructura hasta la experiencia de usuario. Actualmente
             profundizando en la integración de IA/ML en el desarrollo web.
           </p>
-
-          {/* Tech Stack Badges */}
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 text-sm font-medium text-gray-300 bg-secondary/80 border border-white/10 rounded-md hover:border-primary/50 hover:text-primary transition-colors cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-4">
-            <div className="flex gap-4">
-              <Link
-                href="#projects"
-                className="px-8 py-3 bg-primary text-black font-bold rounded-lg hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(192,255,107,0.3)]"
-              >
-                Ver Proyectos
-              </Link>
-              <Link
-                href="#contact"
-                className="px-8 py-3 bg-transparent border border-white/20 text-white font-medium rounded-lg hover:bg-white/5 hover:border-white/40 transition-all"
-              >
-                Contactar
-              </Link>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center gap-4 border-l border-white/10 pl-6 ml-2">
+            <div className="flex items-center gap-4 pl-6 ml-2">
               <Link
                 href="https://github.com/gabrielbustosdev"
                 target="_blank"
@@ -120,24 +88,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        <div className="hidden lg:flex justify-center relative">
-          {/* Decorative glow behind image */}
+        <div className="hidden lg:flex justify-center relative self-start">
           <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full transform scale-75"></div>
-
           <div className="relative group">
-            <div className="w-80 h-80 rounded-2xl bg-secondary border border-white/10 overflow-hidden relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02] shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20"></div>
+            <div className="w-80 h-80 rounded-full border-4 border-primary overflow-hidden relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02] shadow-2xl shadow-primary/50">
               <img
                 src="/perfil.png"
                 alt="Gabriel Bustos"
                 className="w-full h-full object-cover"
               />
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary/30 rounded-tl-3xl -z-10"></div>
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary/30 rounded-br-3xl -z-10"></div>
           </div>
         </div>
       </div>

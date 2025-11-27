@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Quantico } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const quantico = Quantico({
   subsets: ["latin"],
@@ -12,7 +14,8 @@ const quantico = Quantico({
 
 export const metadata: Metadata = {
   title: "Gabriel Bustos",
-  description: "Portafolio profesional de Gabriel Bustos, desarrollador FullStack.",
+  description:
+    "Portafolio profesional de Gabriel Bustos, desarrollador FullStack.",
 };
 
 export default function RootLayout({
@@ -21,12 +24,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body
-        className={`${quantico.className} antialiased`}
-      >
-        {children}
-        <Footer />
+    <html lang="es" suppressHydrationWarning>
+      <body className={`${quantico.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
