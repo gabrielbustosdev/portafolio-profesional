@@ -33,7 +33,7 @@ export default function HexagonBackground() {
 
   return (
     <div
-      className="fixed inset-0 -z-10 overflow-hidden bg-[#1a1a1a]"
+      className="absolute inset-0 -z-10 overflow-hidden bg-[#1a1a1a]"
       aria-hidden="true"
     >
       {/* Base Gradient */}
