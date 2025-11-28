@@ -1,6 +1,6 @@
 import { ProjectsProps } from "../types";
 import ProjectCard from "./ProjectCard";
-import Button from "@/components/ui/CustomButton";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -22,13 +22,15 @@ export default function Projects({
       {showViewMore && (
         <div className="flex justify-center pt-8">
           <Button
-            variant="outline"
+            variant="default"
             size="lg"
             className="group border-primary/50 hover:border-primary hover:bg-primary/10 text-primary-foreground hover:text-primary transition-all duration-300"
-            href="/projects"
+            asChild
           >
-            Ver todos los proyectos
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Link href="/projects">
+              Ver todos los proyectos
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </Button>
         </div>
       )}

@@ -15,6 +15,7 @@ export interface ProjectPost extends BasePost {
     };
     gallery?: ImageRef[];
   };
+  slug: string;
 }
 
 export interface ProjectsProps {
