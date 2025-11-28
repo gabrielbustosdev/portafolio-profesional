@@ -42,8 +42,8 @@ export default function ProjectCard({ project }: { project: ProjectPost }) {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
 
             {/* View Project Button Overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="bg-transparent text-primary px-4 py-2 rounded-lg border border-primary font-medium flex items-center gap-2 shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <div className="absolute inset-0 flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+              <div className="bg-transparent text-primary px-4 py-2 rounded-lg border border-primary font-medium flex items-center gap-2 shadow-lg transform translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
                 <Eye className="w-4 h-4" />
                 Ver Proyecto
               </div>
