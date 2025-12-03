@@ -1,0 +1,96 @@
+---
+title: "TakeGo - Sistema Integral de Pedidos"
+description: "Plataforma completa de gestión para restaurantes de comida rápida, con kioscos autoservicio, panel de cocina y sistema de recogida sincronizado."
+date: "2025-11-01"
+image:
+  src: "/assets/takego-system.png"
+  alt: "Sistema TakeGo de gestión de pedidos"
+tags: ["FullStack", "Sistema Local", "Multi-Plataforma"]
+techStack:
+  [
+    "Python",
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "Electron",
+    "Capacitor",
+    "SQLite",
+    "Tailwind",
+    "Zustand",
+  ]
+role: "Full Stack Developer & Arquitecto"
+status: "in-development"
+metrics:
+  platforms: "3"
+  localFirst: true
+---
+
+## Descripción General
+
+TakeGo es una solución integral diseñada para transformar la experiencia de pedidos en restaurantes de comida rápida. El sistema funciona completamente offline, eliminando la dependencia de internet y garantizando un servicio ininterrumpido. Con tres aplicaciones especializadas que trabajan en sincronía, permite a los clientes realizar pedidos desde kioscos táctiles, a la cocina visualizar y gestionar la preparación en tiempo real, y al personal de atención coordinar la entrega de manera eficiente.
+
+La arquitectura está pensada para establecimientos que necesitan velocidad, confiabilidad y una experiencia moderna sin comprometer la autonomía operativa.
+
+## Características Principales
+
+- **Kiosco de Autoservicio**: Interfaz táctil intuitiva donde los clientes exploran el menú, personalizan sus pedidos y confirman la compra. Diseño visual atractivo con imágenes de productos y navegación por categorías.
+
+- **Panel de Cocina Sincronizado**: Visualización en tiempo real de pedidos entrantes, con estados actualizables (pendiente, en preparación, listo). Priorización automática y notificaciones visuales para optimizar el flujo de trabajo.
+
+- **Sistema de Recogida**: Pantalla dedicada para el personal de atención, mostrando pedidos listos con números de orden y tiempos de espera. Confirmación de entrega con actualización instantánea.
+
+- **Gestión de Catálogo Visual**: Administración completa de productos, categorías e imágenes desde el backend. Cambios reflejados inmediatamente en todas las interfaces.
+
+- **Operación Offline Garantizada**: Base de datos local SQLite que mantiene toda la información sincronizada sin necesidad de conectividad externa. Ideal para locales con internet inestable.
+
+- **Multi-Plataforma Nativa**: Aplicación móvil Android para tablets, aplicación de escritorio para pantallas grandes, y visualizadores especializados según el rol.
+
+## Arquitectura Técnica
+
+### Backend Centralizado
+
+API REST construida con FastAPI que actúa como núcleo del sistema. Gestiona autenticación, operaciones CRUD de productos/categorías/pedidos, y almacenamiento de imágenes. SQLAlchemy maneja la capa de persistencia con SQLite, permitiendo migraciones controladas y consultas optimizadas.
+
+### Frontend Desktop (Electron)
+
+Aplicación de escritorio cross-platform con React y TypeScript. Ideal para pantallas de cocina y puntos de recogida. Zustand gestiona el estado global, evitando prop drilling y facilitando la sincronización en tiempo real mediante polling o WebSockets.
+
+### Frontend Móvil (Capacitor)
+
+Aplicación Android nativa generada con Capacitor. Comparte el código React con la versión desktop, pero adaptada para tablets touchscreen en los kioscos. Aprovecha capacidades nativas como vibración para feedback táctil.
+
+### Visualizadores Especializados
+
+Módulos Python con WebView integrado para roles específicos. Permiten desplegar interfaces web en entornos controlados sin navegadores completos.
+
+## Desafíos
+
+- Diseñar una arquitectura que funcione sin internet pero permita sincronización futura si se requiere.
+- Coordinar múltiples clientes (kioscos, cocina, recogida) apuntando al mismo backend local sin conflictos.
+- Optimizar el flujo de imágenes para que se carguen rápido en pantallas táctiles.
+- Crear interfaces distintas (kiosco, cocina, recogida) reutilizando componentes base.
+- Gestionar estados complejos de pedidos (nuevo, en preparación, listo, entregado) con transiciones válidas.
+- Asegurar que la base de datos SQLite maneje concurrencia sin pérdida de datos.
+
+## Aprendizajes
+
+- FastAPI como framework ágil para APIs REST con validación automática vía Pydantic.
+- SQLAlchemy ORM para modelado relacional sin escribir SQL manual.
+- Arquitectura monorepo con múltiples frontends compartiendo lógica.
+- Electron como puente entre web y desktop para despliegues locales.
+- Capacitor para convertir aplicaciones web en apps Android nativas.
+- Gestión de estado reactivo con Zustand, integrando polling para sincronización.
+- Diseño de UX diferenciado según el rol del usuario (cliente, cocinero, cajero).
+- Manejo de assets locales (imágenes) en sistemas offline-first.
+
+## Próximos Pasos
+
+- Implementar impresión de tickets de pedido desde el kiosco.
+- Añadir reportes de ventas y estadísticas en tiempo real.
+- Desarrollar panel administrativo web para gestión remota (opcional).
+- Integración con sistemas de pago electrónico.
+- Modo de sincronización opcional en la nube para análisis centralizado.
+
+## Nota
+
+Este proyecto está actualmente en desarrollo activo. La versión final incluirá los enlaces de descarga con licencia de prueba.
