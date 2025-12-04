@@ -1,4 +1,4 @@
-import HexagonBackground from "./HexagonBackground";
+import { HexagonBackground } from "./animate-ui/components/backgrounds/hexagon";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6 py-20 overflow-hidden">
-      <HexagonBackground />
+      <HexagonBackground className="absolute inset-0 flex items-center justify-center rounded-xl" />
       <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
         <div className="space-y-8 animate-fade-in-up">
           <div className="space-y-4">
@@ -23,18 +23,18 @@ export default function Home() {
                 Desarrollador FullStack | Explorando IA
               </p>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight tracking-tight">
               Construyo aplicaciones web <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C0FF6B] to-[#8aff6b]">
                 modernas y con impacto.
               </span>
             </h1>
-            <h2 className="text-xl md:text-2xl text-gray-400 font-light max-w-lg">
+            <h2 className="text-xl md:text-2xl text-muted-foreground font-light max-w-lg">
               Transformo problemas técnicos complejos en soluciones elegantes y
               escalables.
             </h2>
           </div>
-          <p className="text-gray-300 text-lg leading-relaxed max-w-xl">
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
             Mi background en análisis de datos y administración de sistemas me
             da una ventaja: entiendo el panorama completo, desde la
             infraestructura hasta la experiencia de usuario. Actualmente
@@ -45,7 +45,7 @@ export default function Home() {
               <Link
                 href="https://github.com/gabrielbustosdev"
                 target="_blank"
-                className="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110"
               >
                 <svg
                   className="w-6 h-6"
@@ -59,7 +59,7 @@ export default function Home() {
               <Link
                 href="https://www.linkedin.com/in/gabrielbustosdev/"
                 target="_blank"
-                className="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110"
               >
                 <svg
                   className="w-6 h-6"
@@ -73,7 +73,7 @@ export default function Home() {
               <Link
                 href="https://www.instagram.com/gabrielbustosdev/"
                 target="_blank"
-                className="text-gray-400 hover:text-primary transition-colors transform hover:scale-110"
+                className="text-muted-foreground hover:text-primary transition-colors transform hover:scale-110"
               >
                 <svg
                   className="w-6 h-6"
@@ -88,7 +88,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hidden lg:flex justify-center relative self-start">
-          <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full transform scale-75"></div>
+          <div className="absolute inset-0 rounded-full transform scale-75"></div>
           <div className="relative group">
             <div className="w-80 h-80 rounded-full border-4 border-primary overflow-hidden relative z-10 transform transition-transform duration-500 group-hover:scale-[1.02] shadow-2xl shadow-primary/50">
               <img
