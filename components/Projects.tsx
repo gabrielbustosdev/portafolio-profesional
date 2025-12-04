@@ -24,7 +24,7 @@ export default function Projects({
           <Button
             variant="default"
             size="lg"
-            className="group border-primary/50 hover:border-primary hover:bg-primary/10 text-primary-foreground hover:text-primary transition-all duration-300"
+            className="group border-primary/50 hover:border-primary hover:bg-primary/30 text-primary-foreground hover:text-primary transition-all duration-300"
             asChild
           >
             <Link href="/projects">

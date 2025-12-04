@@ -203,8 +203,8 @@ export default function About() {
             Más que código, <br />
             <span
               className="text-transparent bg-clip-text 
-            bg-gradient-to-r from-lime-800 via-lime-600 to-lime-800 
-            dark:bg-gradient-to-r dark:from-lime-800 dark:via-primary dark:to-lime-800"
+            bg-gradient-to-r from-[#06B6D4] via-[#7C3AED] to-[#06B6D4] 
+            dark:bg-gradient-to-r dark:from-[#06B6D4] dark:via-[#7C3AED] dark:to-[#06B6D4]"
             >
               construyo soluciones resilientes.
             </span>
@@ -222,7 +222,7 @@ export default function About() {
           <div
             className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 
           bg-gradient-to-b from-slate-800/50 via-slate-600/30 to-transparent 
-          dark:bg-gradient-to-b dark:from-primary/50 dark:via-lime-600/30 dark:to-transparent 
+          dark:bg-gradient-to-b dark:from-primary/50 dark:via-[#06B6D4]/30 dark:to-transparent 
           transform md:-translate-x-1/2"
           />
 
@@ -239,7 +239,7 @@ export default function About() {
                   className="absolute left-4 md:left-1/2 w-4 h-4 
                 bg-background border-2 border-slate-600 dark:border-primary rounded-full 
                 transform -translate-x-1/2 mt-1.5 z-10 
-                shadow-[0_0_10px_rgba(108,108,108,0.5)] dark:shadow-[0_0_10px_rgba(192,255,107,0.5)]"
+                shadow-[0_0_10px_rgba(6,182,212,0.5)] dark:shadow-[0_0_10px_rgba(6,182,212,0.5)]"
                 >
                   <div className="absolute inset-0 bg-slate-600/20 dark:bg-primary/20 rounded-full animate-pulse-glow" />
                 </div>
@@ -265,7 +265,7 @@ export default function About() {
                     </div>
 
                     <h4 className="text-white font-medium mb-3 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-lime-400" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4]" />
                       {step.organization}
                     </h4>
 

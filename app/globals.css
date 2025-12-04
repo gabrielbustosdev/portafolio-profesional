@@ -12,33 +12,33 @@
   --card-foreground: #d5d5d5;
   --popover: #0a0a0a;
   --popover-foreground: #d5d5d5;
-  --primary: #c0ff6b;
+  --primary: #7C3AED;
   --primary-foreground: #171721;
-  --secondary: #1a1a1a;
+  --secondary: #06B6D4;
   --secondary-foreground: #d5d5d5;
   --muted: #1a1a1a;
   --muted-foreground: #1a1a1a;
-  --accent: #c0ff6b;
+  --accent: #7C3AED;
   --accent-foreground: #171721;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #656565;
   --input: #656565;
-  --ring: #c0ff6b;
-  --chart-1: #c0ff6b;
+  --ring: #7C3AED;
+  --chart-1: #7C3AED;
   --chart-2: #656565;
   --chart-3: #d5d5d5;
-  --chart-4: #c0ff6b;
+  --chart-4: #7C3AED;
   --chart-5: #171721;
   --radius: 0.5rem;
   --sidebar: #0a0a0a;
   --sidebar-foreground: #d5d5d5;
-  --sidebar-primary: #c0ff6b;
+  --sidebar-primary: #7C3AED;
   --sidebar-primary-foreground: #171721;
   --sidebar-accent: #1a1a1a;
   --sidebar-accent-foreground: #d5d5d5;
   --sidebar-border: #1a1a1a;
-  --sidebar-ring: #c0ff6b;
+  --sidebar-ring: #7C3AED;
 }
 
 .dark {
@@ -48,32 +48,32 @@
   --card-foreground: #d5d5d5;
   --popover: #0a0a0a;
   --popover-foreground: #d5d5d5;
-  --primary: #c0ff6b;
+  --primary: #7C3AED;
   --primary-foreground: #171721;
   --secondary: #1a1a1a;
-  --secondary-foreground: #d5d5d5;
+  --secondary-foreground: #06B6D4;
   --muted: #656565;
   --muted-foreground: #656565;
-  --accent: #c0ff6b;
+  --accent: #7C3AED;
   --accent-foreground: #171721;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: #1a1a1a;
   --input: #1a1a1a;
-  --ring: #c0ff6b;
-  --chart-1: #c0ff6b;
+  --ring: #7C3AED;
+  --chart-1: #7C3AED;
   --chart-2: #656565;
   --chart-3: #d5d5d5;
-  --chart-4: #c0ff6b;
+  --chart-4: #7C3AED;
   --chart-5: #171721;
   --sidebar: #0a0a0a;
   --sidebar-foreground: #d5d5d5;
-  --sidebar-primary: #c0ff6b;
+  --sidebar-primary: #7C3AED;
   --sidebar-primary-foreground: #171721;
   --sidebar-accent: #1a1a1a;
   --sidebar-accent-foreground: #d5d5d5;
   --sidebar-border: #1a1a1a;
-  --sidebar-ring: #c0ff6b;
+  --sidebar-ring: #7C3AED;
 }
 
 @theme inline {
@@ -129,7 +129,7 @@ html {
 }
 
 ::selection {
-  background: #c0ff6b;
+  background: #7C3AED;
   color: #000000;
 }
 

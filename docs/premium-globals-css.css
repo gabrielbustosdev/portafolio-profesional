@@ -1,0 +1,473 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* === PALETA MINIMALISTA PREMIUM === */
+  /* Neutrales Base - Tonos Cálidos */
+  --neutral-50: #FAFAF9;    /* Hueso - Fondos principales light */
+  --neutral-100: #F5F5F4;   /* Casi blanco cálido */
+  --neutral-200: #E7E5E4;   /* Gris claro cálido */
+  --neutral-300: #D6D3D1;   /* Gris medio suave */
+  --neutral-400: #A8A29E;   /* Gris medio */
+  --neutral-500: #78716C;   /* Gris cálido */
+  --neutral-600: #57534E;   /* Gris piedra */
+  --neutral-700: #44403C;   /* Gris oscuro cálido */
+  --neutral-800: #292524;   /* Casi negro cálido */
+  --neutral-900: #1C1917;   /* Negro cálido */
+  --neutral-950: #09090B;   /* Negro profundo */
+
+  /* Color Primario - Mocha Mousse (Pantone 2025) */
+  --mocha-50: #F7F5F3;
+  --mocha-100: #EBE7E3;
+  --mocha-200: #D9D1C9;
+  --mocha-300: #C4B7AA;
+  --mocha-400: #A89785;
+  --mocha-500: #927A66;   /* Mocha base */
+  --mocha-600: #6B5D56;   /* Mocha principal - Pantone 17-1230 */
+  --mocha-700: #5A4D47;
+  --mocha-800: #4C4139;
+  --mocha-900: #413730;
+
+  /* Color Acento - Oro Rosa */
+  --gold-50: #FDF8F3;
+  --gold-100: #FAEDE0;
+  --gold-200: #F4D8BD;
+  --gold-300: #ECBE95;
+  --gold-400: #E09F7D;   /* Oro rosa principal */
+  --gold-500: #D4825F;
+  --gold-600: #C17854;
+  --gold-700: #A15E45;
+  --gold-800: #824D3C;
+  --gold-900: #6B4033;
+
+  /* Color Complementario - Terracota (de Opción 1) */
+  --terracotta-50: #FEF3F2;
+  --terracotta-100: #FEE4E2;
+  --terracotta-200: #FECDCA;
+  --terracotta-300: #FCA5A0;
+  --terracotta-400: #F87066;
+  --terracotta-500: #EF4639;
+  --terracotta-600: #D64933;   /* Terracotta médico */
+  --terracotta-700: #B92B1F;
+  --terracotta-800: #97261C;
+  --terracotta-900: #7C241C;
+
+  /* === VARIABLES SEMÁNTICAS - MODO CLARO === */
+  --background: var(--neutral-50);           /* Hueso suave */
+  --foreground: var(--neutral-900);          /* Negro cálido para texto */
+  
+  --card: var(--neutral-100);                /* Cards en gris claro cálido */
+  --card-foreground: var(--neutral-900);
+  
+  --popover: var(--neutral-50);
+  --popover-foreground: var(--neutral-900);
+  
+  --primary: var(--gold-400);                /* Oro rosa como primario */
+  --primary-foreground: var(--neutral-950);  /* Texto sobre oro */
+  
+  --secondary: var(--mocha-600);             /* Mocha como secundario */
+  --secondary-foreground: var(--neutral-50);
+  
+  --muted: var(--neutral-200);               /* Fondos sutiles */
+  --muted-foreground: var(--neutral-600);    /* Texto muted */
+  
+  --accent: var(--gold-400);                 /* Acento oro rosa */
+  --accent-foreground: var(--neutral-950);
+  
+  --destructive: var(--terracotta-600);      /* Destructivo en terracota */
+  --destructive-foreground: var(--neutral-50);
+  
+  --border: var(--neutral-300);              /* Bordes sutiles */
+  --input: var(--neutral-300);
+  --ring: var(--gold-400);                   /* Focus ring en oro */
+  
+  /* Charts */
+  --chart-1: var(--gold-400);
+  --chart-2: var(--mocha-600);
+  --chart-3: var(--terracotta-500);
+  --chart-4: var(--neutral-600);
+  --chart-5: var(--neutral-400);
+  
+  --radius: 0.75rem;                         /* Radius más generoso */
+  
+  /* Sidebar */
+  --sidebar: var(--mocha-600);               /* Sidebar en mocha */
+  --sidebar-foreground: var(--neutral-50);
+  --sidebar-primary: var(--gold-400);
+  --sidebar-primary-foreground: var(--neutral-950);
+  --sidebar-accent: var(--mocha-700);
+  --sidebar-accent-foreground: var(--neutral-100);
+  --sidebar-border: var(--mocha-700);
+  --sidebar-ring: var(--gold-400);
+}
+
+.dark {
+  /* === VARIABLES SEMÁNTICAS - MODO OSCURO === */
+  --background: var(--neutral-950);          /* Negro profundo */
+  --foreground: var(--neutral-50);           /* Texto claro cálido */
+  
+  --card: var(--neutral-900);                /* Cards en negro cálido */
+  --card-foreground: var(--neutral-50);
+  
+  --popover: var(--neutral-900);
+  --popover-foreground: var(--neutral-50);
+  
+  --primary: var(--gold-400);                /* Oro rosa más vibrante en dark */
+  --primary-foreground: var(--neutral-950);
+  
+  --secondary: var(--mocha-700);             /* Mocha oscuro */
+  --secondary-foreground: var(--neutral-50);
+  
+  --muted: var(--neutral-800);               /* Fondos sutiles dark */
+  --muted-foreground: var(--neutral-400);    /* Texto muted */
+  
+  --accent: var(--gold-300);                 /* Acento más luminoso en dark */
+  --accent-foreground: var(--neutral-950);
+  
+  --destructive: var(--terracotta-500);      /* Terracota más brillante */
+  --destructive-foreground: var(--neutral-50);
+  
+  --border: var(--neutral-800);              /* Bordes oscuros sutiles */
+  --input: var(--neutral-800);
+  --ring: var(--gold-400);                   /* Focus ring mantiene intensidad */
+  
+  /* Charts en dark mode */
+  --chart-1: var(--gold-300);
+  --chart-2: var(--mocha-500);
+  --chart-3: var(--terracotta-400);
+  --chart-4: var(--neutral-500);
+  --chart-5: var(--neutral-400);
+  
+  /* Sidebar dark */
+  --sidebar: var(--neutral-900);
+  --sidebar-foreground: var(--neutral-50);
+  --sidebar-primary: var(--gold-400);
+  --sidebar-primary-foreground: var(--neutral-950);
+  --sidebar-accent: var(--neutral-800);
+  --sidebar-accent-foreground: var(--neutral-200);
+  --sidebar-border: var(--neutral-800);
+  --sidebar-ring: var(--gold-400);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* === COLORES EXTENDIDOS PARA TAILWIND === */
+  /* Puedes usar estas clases: bg-mocha-600, text-gold-400, border-terracotta-500 */
+  
+  --color-mocha-50: var(--mocha-50);
+  --color-mocha-100: var(--mocha-100);
+  --color-mocha-200: var(--mocha-200);
+  --color-mocha-300: var(--mocha-300);
+  --color-mocha-400: var(--mocha-400);
+  --color-mocha-500: var(--mocha-500);
+  --color-mocha-600: var(--mocha-600);
+  --color-mocha-700: var(--mocha-700);
+  --color-mocha-800: var(--mocha-800);
+  --color-mocha-900: var(--mocha-900);
+
+  --color-gold-50: var(--gold-50);
+  --color-gold-100: var(--gold-100);
+  --color-gold-200: var(--gold-200);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+  --color-gold-800: var(--gold-800);
+  --color-gold-900: var(--gold-900);
+
+  --color-terracotta-50: var(--terracotta-50);
+  --color-terracotta-100: var(--terracotta-100);
+  --color-terracotta-200: var(--terracotta-200);
+  --color-terracotta-300: var(--terracotta-300);
+  --color-terracotta-400: var(--terracotta-400);
+  --color-terracotta-500: var(--terracotta-500);
+  --color-terracotta-600: var(--terracotta-600);
+  --color-terracotta-700: var(--terracotta-700);
+  --color-terracotta-800: var(--terracotta-800);
+  --color-terracotta-900: var(--terracotta-900);
+
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-300: var(--neutral-300);
+  --color-neutral-400: var(--neutral-400);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-600: var(--neutral-600);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-800: var(--neutral-800);
+  --color-neutral-900: var(--neutral-900);
+  --color-neutral-950: var(--neutral-950);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Antialiasing mejorado para tonos cálidos */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection con oro rosa en lugar de verde neón */
+::selection {
+  background: var(--gold-400);
+  color: var(--neutral-950);
+}
+
+.dark ::selection {
+  background: var(--gold-300);
+  color: var(--neutral-950);
+}
+
+/* === ANIMACIONES PREMIUM === */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.02);
+    filter: brightness(1.15);
+  }
+}
+
+@keyframes flash {
+  0%, 95%, 100% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 0.12;  /* Más sutil para tonos cálidos */
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.animate-flash {
+  animation: flash 10s ease-in-out infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Animación de shimmer para elementos premium */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-200),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.dark .animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-400),
+    transparent
+  );
+}
+
+/* Efecto de hover premium para CTAs */
+.cta-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.cta-premium:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.cta-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 25px -5px rgba(224, 159, 125, 0.3),
+    0 8px 10px -6px rgba(224, 159, 125, 0.2);
+}
+
+.dark .cta-premium:hover {
+  box-shadow: 
+    0 10px 25px -5px rgba(224, 159, 125, 0.4),
+    0 8px 10px -6px rgba(224, 159, 125, 0.3);
+}
+
+/* Gradientes premium para secciones hero */
+.gradient-hero-light {
+  background: linear-gradient(
+    135deg,
+    var(--neutral-50) 0%,
+    var(--mocha-50) 50%,
+    var(--gold-50) 100%
+  );
+}
+
+.gradient-hero-dark {
+  background: linear-gradient(
+    135deg,
+    var(--neutral-950) 0%,
+    var(--neutral-900) 50%,
+    var(--mocha-900) 100%
+  );
+}
+
+/* Efecto de borde con gradiente oro */
+.border-gold-gradient {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(var(--background), var(--background)),
+    linear-gradient(135deg, var(--gold-400), var(--gold-600));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Texto con efecto metálico */
+.text-gold-metallic {
+  background: linear-gradient(
+    135deg,
+    var(--gold-700),
+    var(--gold-400),
+    var(--gold-600)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gold-metallic {
+  background: linear-gradient(
+    135deg,
+    var(--gold-300),
+    var(--gold-100),
+    var(--gold-400)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sombras sofisticadas para cards premium */
+.shadow-premium {
+  box-shadow: 
+    0 1px 3px 0 rgba(107, 93, 86, 0.1),
+    0 1px 2px -1px rgba(107, 93, 86, 0.1);
+}
+
+.shadow-premium-lg {
+  box-shadow: 
+    0 10px 15px -3px rgba(107, 93, 86, 0.1),
+    0 4px 6px -4px rgba(107, 93, 86, 0.1);
+}
+
+.dark .shadow-premium {
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.3),
+    0 1px 2px -1px rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-premium-lg {
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -4px rgba(0, 0, 0, 0.4);
+}

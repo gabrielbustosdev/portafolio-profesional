@@ -25,7 +25,7 @@ export default function Home() {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight tracking-tight">
               Construyo aplicaciones web <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C0FF6B] to-[#8aff6b]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#06B6D4] to-[#5B21B6]">
                 modernas y con impacto.
               </span>
             </h1>
