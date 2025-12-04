@@ -1,5 +1,7 @@
 import { getAllProjects, getProjectBySlug } from "@/lib/project-data";
 import { notFound } from "next/navigation";
+import { Note } from "@/components/mdx/note";
+import { Typography } from "@/components/mdx/typography";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 import { ArrowLeft, Github, ExternalLink, Calendar, Clock } from "lucide-react";
@@ -120,7 +122,16 @@ export default async function ProjectPage({
 
         {/* Content Section */}
         <article className="prose prose-lg dark:prose-invert max-w-none prose-headings:scroll-mt-20 prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl prose-img:shadow-lg">
-          <MDXRemote source={content} />
+          <MDXRemote
+            source={content}
+            components={{
+              Note,
+              h2: Typography.h2,
+              h3: Typography.h3,
+              ul: Typography.ul,
+              li: Typography.li,
+            }}
+          />
         </article>
       </div>
     </main>
